@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.myxq.domain.User" table="user">
+        <!--建立类属性，哪一个是主键，和数据库中主键进行对应-->
+        <id name="user_id" column="user_id">
+            <!--主键生成策略-->
+            <generator class="native"/>
+        </id>
+        <!--        建立类中普通属性与数据库当中子段进行关联-->
+        <property name="user_code" column="user_code"/>
+        <property name="user_name" column="user_name"/>
+        <property name="user_password" column="user_password"/>
+        <property name="user_state" column="user_state"/>
+        <set name="roles" table="user_role" cascade="save-update">
+            <key column="user_id"/>
+            <many-to-many class="com.myxq.domain.Role" column="role_id"/>
+        </set>
+    </class>
+</hibernate-mapping>
