@@ -11,11 +11,12 @@ import java.lang.annotation.Target;
 
 /**
  * this is test hibernate many-to many user--user_role--role
+ *
  * @author Administrator
  */
 public class HibernateTest2 {
     @Test
-    public void test(){
+    public void test() {
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
         //创建用户
@@ -49,15 +50,15 @@ public class HibernateTest2 {
         currenSession.save(user2);
 
         /**
-            currenSession.save(role1);
-            currenSession.save(role2);
-            currenSession.save(role3);*/
+         currenSession.save(role1);
+         currenSession.save(role2);
+         currenSession.save(role3);*/
 
         transaction.commit();
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         //关系操作，操作内部集合
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
@@ -68,8 +69,9 @@ public class HibernateTest2 {
 
         transaction.commit();
     }
+
     @Test
-    public void test3(){
+    public void test3() {
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
         User user2 = currenSession.get(User.class, 2L);

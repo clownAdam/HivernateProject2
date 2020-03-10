@@ -18,4 +18,13 @@ public class Role {
      * 角色下面的所有用户
      */
     private Set<User> users = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "role_id=" + role_id +
+                ", role_name='" + role_name + '\'' +
+                ", role_memo='" + role_memo + '\'' +
+                '}';
+    }
 }

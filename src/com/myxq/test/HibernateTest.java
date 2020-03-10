@@ -9,11 +9,12 @@ import org.junit.Test;
 
 /**
  * 用于一对多的测试 customer-->linkman
+ *
  * @author Administrator
  */
 public class HibernateTest {
     @Test
-    public void test(){
+    public void test() {
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
 
@@ -41,7 +42,7 @@ public class HibernateTest {
         /*linkman1.setCustomer(customer1);
         linkman2.setCustomer(customer1);
         linkman3.setCustomer(customer2);*/
-/*级联保存或更新*/
+        /*级联保存或更新*/
         currenSession.save(customer1);
         currenSession.save(customer2);
         currenSession.save(customer3);
@@ -54,7 +55,7 @@ public class HibernateTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
         Linkman linkman = currenSession.get(Linkman.class, 3L);
@@ -63,7 +64,7 @@ public class HibernateTest {
     }
 
     @Test
-    public void test3(){
+    public void test3() {
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
         Customer customer = currenSession.get(Customer.class, 1L);
@@ -73,7 +74,7 @@ public class HibernateTest {
     }
 
     @Test
-    public void test4(){
+    public void test4() {
         Session currenSession = HibernateUtil.getCurrenSession();
         Transaction transaction = currenSession.beginTransaction();
         Linkman linkman1 = currenSession.get(Linkman.class, 1L);
