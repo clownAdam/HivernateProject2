@@ -36,7 +36,7 @@ public class User {
               ", user_name='" + user_name + '\'' +
               ", user_password='" + user_password + '\'' +
               ", user_state='" + user_state + '\'' +
-              ", roles=" + roles +
+//              ", roles=" + roles +
               '}';
    }
 }
